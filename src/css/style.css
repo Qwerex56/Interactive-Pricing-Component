@@ -1,0 +1,160 @@
+@import './_reset.css';
+@import './_variables.css';
+
+body {
+  background-color: var(--very-pale-blue);
+
+  font-family: var(--manrope);
+}
+
+.rating-nav {
+  margin-bottom: 4rem;
+
+  text-align: center;
+}
+
+.rating-nav > h1 {
+  margin-bottom: .5rem;
+
+  color: var(--dark-desaturated-blue);
+
+  font-size: 1.25rem;
+  font-weight: 800;
+  line-height: normal;
+}
+
+.rating-nav > p {
+  color: var(--grayish-blue);
+  
+  font-size: .8125rem;
+  font-weight: 600;
+  line-height: 1.4375rem;
+}
+
+.pricing {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  min-width: 327px;
+  max-width: 540px;
+  width: fit-content;
+
+  padding: 2rem 0;
+
+  border-radius: .5rem;
+
+  background-color: var(--white);
+}
+
+.pricing-app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  color: var(--grayish-blue);
+
+  font-family: var(--manrope);
+  font-size: .75rem;
+}
+
+.pricing-app::after {
+  content: " ";
+  width: 100%;
+  margin: 1.5rem 0rem;
+
+  border-bottom: 1px solid var(--light-grayish-blue-slider);
+}
+
+.pricing-app > p:first-child {
+  margin-bottom: 1.5rem;
+
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .1071rem;
+}
+
+.pricing-app__input {
+  margin-bottom: 1.5rem;
+}
+
+.pricing-app__total {
+  margin-bottom: 2.25rem;
+
+  font-size: .875rem;
+
+  vertical-align: middle;
+}
+
+.pricing-app__total > span {
+  color: var(--dark-desaturated-blue);
+
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.pricing-app__mys {
+  display: flex;
+  flex-direction: row;
+
+  margin-bottom: 1.125rem;
+}
+
+.pricing-app__mys p > span {
+  padding: .125rem .5rem;
+
+  border-radius: 9999px;
+
+  color: var(--light-red);
+  background-color: var(--light-grayish-red);
+}
+
+.pricing-app__mys__input::-webkit-slider-runnable-track {
+  background-color: var(--light-grayish-blue-slider);
+  
+}
+
+.pricing-app__input::-webkit-slider-thumb {
+
+}
+
+.pricing-benefits {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+
+  color: var(--grayish-blue);
+
+  font-family: var(--manrope);
+  font-size: .75rem;
+  font-weight: 600;
+  text-align: center;
+}
+
+.pricing-benefits__list {
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.pricing-benefits__list > li > i {
+  margin-right: .25rem;
+
+  color: var(--soft-cyan);
+}
+
+.pricing-benefits > p:last-child {
+  gap: 2rem;
+}
+
+.pricing-benefits__submit {
+  padding: .75rem 2.875rem;
+  
+  border: none;
+  border-radius: 9999px;
+
+  color: var(--pale-blue);
+  background-color: var(--dark-desaturated-blue);
+
+  font-weight: 800;
+}
