@@ -95,13 +95,21 @@ body {
 
 .pricing-app__mys {
   display: flex;
+  position: relative;
   flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
 
   margin-bottom: 1.125rem;
 }
 
-.pricing-app__mys p > span {
+.pricing-app__mys__yearly {
+  position: absolute;
   padding: .125rem .5rem;
+  margin-left: .5rem;
+
+  transform: translateX(105%);
+  right: 0;
 
   border-radius: 9999px;
 
@@ -109,13 +117,64 @@ body {
   background-color: var(--light-grayish-red);
 }
 
-.pricing-app__mys__input::-webkit-slider-runnable-track {
-  background-color: var(--light-grayish-blue-slider);
-  
+.pricing-app__input {
+  width: 100%;
+  overflow: hidden;
 }
 
-.pricing-app__input::-webkit-slider-thumb {
+.pricing-app__input::-webkit-slider-thumb  {
+  appearance: none;
+  
+  height: 2.5rem;
+  aspect-ratio: 1;
 
+  border-radius: 50%;
+  border-image-source: linear-gradient(90deg, var(--soft-cyan) 50%, var(--grayish-blue) 50%);
+  border-image-slice: 1;
+  border-image-width: 0 200px;
+  border-image-outset: 0 calc(200px);
+
+  background-color: var(--strong-cyan);
+}
+
+.pricing-app__mys__select {
+  position: relative;
+  width: 2.625rem;
+
+  aspect-ratio: 2;
+  overflow: hidden;
+
+  border-radius: 9999px;
+
+  background-color: var(--light-grayish-blue-slider);
+
+  transition: background-color 300ms;
+}
+
+.pricing-app__mys__select::after {
+  content: " ";
+  position: absolute;
+
+  left: .25rem;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: .875rem;
+  aspect-ratio: 1;
+
+  border-radius: 9999px;
+
+  background-color: var(--white);
+
+  transition: left 300ms;
+}
+
+.pricing-app__mys__select:checked {
+  background-color: var(--soft-cyan);
+}
+
+.pricing-app__mys__select:checked::after {
+  left: calc(2.625rem - .25rem - .875rem);
 }
 
 .pricing-benefits {
@@ -157,4 +216,8 @@ body {
   background-color: var(--dark-desaturated-blue);
 
   font-weight: 800;
+}
+
+.pricing-benefits__submit:hover {
+  color: var(--white);
 }

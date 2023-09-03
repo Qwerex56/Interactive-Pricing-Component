@@ -18,26 +18,29 @@
       Simple, traffic-based pricing
     </h1>
     <p>
-      Sign-up for our 30-day trial.<br>
+      Sign-up for our 30-day trial.
       No credit card required.
     </p>
   </header>
   <main class="pricing">
     <section class="pricing-app">
-      <p>
+      <p id="Pageviews">
         100k pageviews
       </p>
-      <input type="range" name="" id="" class="pricing-app__input">
-      <p class="pricing-app__total">
+      <input type="range" id="PriceSelect" min="4.0" max="28.0" step="1.5" value="16.0" class="pricing-app__input">
+      <p id="Pricing" class="pricing-app__total">
         <span>$16.00</span> /month
       </p>
       <div class="pricing-app__mys">
         <p>
           Monthly Billing
         </p>
-        <input type="checkbox" name="" id="" class="pricing-app__mys__select">
+        <input type="checkbox" id="MOYSelect" class="pricing-app__mys__select">
         <p>
-          Yearly Billing<span>-25%</span>
+          Yearly Billing
+        </p>
+        <p class="pricing-app__mys__yearly">
+          -25%
         </p>
       </div>
     </section>
@@ -61,6 +64,7 @@
       </button>
     </section>
   </main>
+  <script src="./src/js/pricingCalculator.js"></script>
 </body>
 
 </html>
