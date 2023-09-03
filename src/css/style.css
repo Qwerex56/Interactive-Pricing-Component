@@ -7,7 +7,30 @@ body {
   font-family: var(--manrope);
 }
 
+body::before {
+  content: " ";
+
+  position: absolute;
+
+  width: 100%;
+  height: 50%;
+
+  top: 0;
+  left: 0;
+
+  background-image: url("../images/bg-pattern.svg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position-x: left;
+  background-position-y: bottom;
+
+  z-index: -1;
+}
+
 .rating-nav {
+  position: relative;
+
+  width: 100%;
   margin-bottom: 4rem;
 
   text-align: center;
@@ -25,26 +48,62 @@ body {
 
 .rating-nav > p {
   color: var(--grayish-blue);
+  padding-left: 25%;
+  padding-right: 25%;
   
   font-size: .8125rem;
   font-weight: 600;
   line-height: 1.4375rem;
 }
 
+.rating-nav::before {
+  content: " ";
+
+  position: absolute;
+
+  width: 100%;
+  height: 200%;
+
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+
+  background-image: url("../images/pattern-circles.svg");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position-x: center;
+
+  z-index: -1;
+}
+
+@media screen and (min-width: 635px) {
+  .rating-nav::before {
+    height: 250%;
+  }
+}
+
 .pricing {
   display: flex;
   flex-direction: column;
-  align-items: center;
 
   min-width: 327px;
   max-width: 540px;
-  width: fit-content;
 
   padding: 2rem 0;
+  margin: 0 1.5rem;
 
   border-radius: .5rem;
 
   background-color: var(--white);
+
+  box-shadow: 0rem 1.25rem 1.875rem -0.3125rem hsla(230, 29%, 61%, 0.15);
+}
+
+@media screen and (min-width: 768px) {
+
+  .pricing {
+    width: 540px;
+  }
 }
 
 .pricing-app {
@@ -79,7 +138,13 @@ body {
 }
 
 .pricing-app__total {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+
   margin-bottom: 2.25rem;
+  gap: .625rem;
 
   font-size: .875rem;
 
@@ -131,8 +196,8 @@ body {
   border-radius: 50%;
   border-image-source: linear-gradient(90deg, var(--soft-cyan) 50%, var(--grayish-blue) 50%);
   border-image-slice: 1;
-  border-image-width: 0 200px;
-  border-image-outset: 0 calc(200px);
+  border-image-width: 0 999px;
+  border-image-outset: 0 999px;
 
   background-color: var(--strong-cyan);
 }

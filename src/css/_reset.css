@@ -1,6 +1,7 @@
 html, body {
   height: 100vh;
-  overflow: hidden;
+  width: 100vw;
+  /* overflow: hidden; */
 
   display: flex;
   flex-direction: column;

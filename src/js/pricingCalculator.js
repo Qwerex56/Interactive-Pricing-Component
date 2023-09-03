@@ -6,10 +6,15 @@ const moy = document.querySelector('#MOYSelect');
 const CONVERSION_RATE = 6.25;
 const PAGEVIEWS_TEXT = 'k pageviews'
 
-slider.addEventListener('input', ev => {
-  const price = ev.target.value;
+slider.addEventListener('input', () => updatePrice());
+moy.addEventListener('input', () => updatePrice());
+
+const updatePrice = () => {
+  const price = slider.value;
   const pageViews = (price * CONVERSION_RATE).toFixed(0);
 
-  views.innerHTML = pageViews.concat(PAGEVIEWS_TEXT);
-  pricing.innerHTML = parseFloat(price).toFixed(2);
-})
+  views.innerText = pageViews.concat(PAGEVIEWS_TEXT);
+  pricing.innerText = '$' + parseFloat(
+    moy.checked? price * 0.75 : price
+  ).toFixed(2);
+}
