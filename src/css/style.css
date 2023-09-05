@@ -103,6 +103,7 @@ body::before {
 
   .pricing {
     width: 540px;
+    padding: 2.5rem 0rem;
   }
 }
 
@@ -117,6 +118,22 @@ body::before {
   font-size: .75rem;
 }
 
+@media screen and (min-width: 768px) {
+  .pricing-app {
+    display: grid;
+    row-gap: 1.125rem;
+    justify-items: center;
+    align-items: center;
+    
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr) 0.5fr;
+    grid-template-areas: 
+    "page-views total-price"
+    "slider slider"
+    "billing-type billing-type";
+  }
+}
+
 .pricing-app::after {
   content: " ";
   width: 100%;
@@ -126,6 +143,8 @@ body::before {
 }
 
 .pricing-app > p:first-child {
+  grid-area: page-views;
+
   margin-bottom: 1.5rem;
 
   font-weight: 800;
@@ -133,11 +152,28 @@ body::before {
   letter-spacing: .1071rem;
 }
 
+@media screen and (min-width: 768px) {
+  .pricing-app > p:first-child {
+    font-size: .875rem;
+    margin-bottom: 0;
+  }
+}
+
 .pricing-app__input {
+  grid-area: slider;
+
   margin-bottom: 1.5rem;
 }
 
+@media screen and (min-width: 768px) {
+  .pricing-app__input {
+    margin-bottom: 0;
+  }
+}
+
 .pricing-app__total {
+  grid-area: total-price;
+
   display: flex;
   flex-direction: row;
   justify-items: center;
@@ -151,6 +187,13 @@ body::before {
   vertical-align: middle;
 }
 
+@media screen and (min-width: 768px) { 
+  .pricing-app__total {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+}
+
 .pricing-app__total > span {
   color: var(--dark-desaturated-blue);
 
@@ -158,7 +201,15 @@ body::before {
   font-weight: 800;
 }
 
+@media screen and (min-width: 768px) {
+  .pricing-app__total > span {
+    font-size: 2.5rem;
+  }
+}
+
 .pricing-app__mys {
+  grid-area: billing-type;
+
   display: flex;
   position: relative;
   flex-direction: row;
@@ -166,6 +217,12 @@ body::before {
   gap: 0.5rem;
 
   margin-bottom: 1.125rem;
+}
+
+@media screen and (min-width: 768px) { 
+  .pricing-app__mys {
+    margin: 0;
+  }
 }
 
 .pricing-app__mys__yearly {
@@ -245,6 +302,7 @@ body::before {
 .pricing-benefits {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 2rem;
 
   color: var(--grayish-blue);
@@ -253,6 +311,13 @@ body::before {
   font-size: .75rem;
   font-weight: 600;
   text-align: center;
+}
+
+@media screen and (min-width: 768px) {
+  .pricing-benefits {
+    flex-direction: row;
+    justify-content: space-around;
+  }
 }
 
 .pricing-benefits__list {
@@ -273,6 +338,7 @@ body::before {
 
 .pricing-benefits__submit {
   padding: .75rem 2.875rem;
+  width: fit-content;
   
   border: none;
   border-radius: 9999px;
