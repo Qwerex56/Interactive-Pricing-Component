@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon-32x32.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <script src="https://kit.fontawesome.com/16ce9c8854.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="./src/css/style.css">
+
+  <title>Interactive Pricing Component | Adrian Czubaty</title>
+</head>
+
+<body>
+  <header class="rating-nav">
+    <h1>
+      Simple, traffic-based pricing
+    </h1>
+    <p>
+      Sign-up for our 30-day trial.
+      No credit card required.
+    </p>
+  </header>
+  <main class="pricing">
+    <section class="pricing-app">
+      <p id="Pageviews">
+        100k pageviews
+      </p>
+      <input type="range" id="PriceSelect" min="4.0" max="28.0" step="1.5" value="16.0" class="pricing-app__input">
+      <div class="pricing-app__total">
+        <span id="Pricing">$16.00</span><p>/month</p>
+      </div>
+      <div class="pricing-app__mys">
+        <p>
+          Monthly Billing
+        </p>
+        <input type="checkbox" id="MOYSelect" class="pricing-app__mys__select">
+        <p>
+          Yearly Billing
+        </p>
+        <p class="pricing-app__mys__yearly">
+          -25%
+        </p>
+      </div>
+    </section>
+    <section class="pricing-benefits">
+      <ul class="pricing-benefits__list">
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Unlimited websites
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          100% data ownership
+        </li>
+        <li>
+          <i class="fa-solid fa-check"></i>
+          Email reports
+        </li>
+      </ul>
+      <button class="pricing-benefits__submit">
+        Start my trial
+      </button>
+    </section>
+  </main>
+  <script src="./src/js/pricingCalculator.js"></script>
+</body>
+
+</html>
